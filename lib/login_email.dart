@@ -71,7 +71,7 @@ class LoginEmailScreen extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    // Logika logowania
+                    Navigator.pushNamed(context, '/login_gui.dart');
                   },
                   child: const Text(
                     'Zaloguj się',
