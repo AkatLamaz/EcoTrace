@@ -24,7 +24,7 @@ class LoginEmailScreen extends StatelessWidget {
           ),
         ),
         padding: EdgeInsets.symmetric(
-            horizontal: screenWidth * 0.1, // 10% szerokości ekranu
+            horizontal: screenWidth * 0.25, // 10% szerokości ekranu
             vertical: screenHeight * 0.1 // 10% wysokości ekranu
         ),
         child: Center(

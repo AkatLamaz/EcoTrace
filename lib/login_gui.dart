@@ -243,9 +243,6 @@ class EmissionsPage extends StatelessWidget {
   }
 }
 
-
-
-
 //Community Page
 class CommunityPage extends StatelessWidget {
   const CommunityPage({super.key});

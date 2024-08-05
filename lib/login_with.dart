@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFF4C8743),
         title: const Center(
-          child: Text("Just code "),
+          child: Text(""),
         ),
       ),
       body: Container(
@@ -45,13 +45,13 @@ class LoginScreen extends StatelessWidget {
               'Zaloguj za pomocą',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 10),
             const EmailButton(),
-            const SizedBox(height: 5),
+            const SizedBox(height: 10),
             const GoogleButton(),
-            const SizedBox(height: 5),
+            const SizedBox(height: 10),
             const FacebookButton(),
-            const SizedBox(height: 35),
+            const SizedBox(height: 45),
             const Text(
               'Nie masz konta?',
               style: TextStyle(
@@ -94,7 +94,7 @@ class LoginButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: color,
-        minimumSize: const Size(200, 50),
+        minimumSize: const Size(364, 50),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
@@ -144,7 +144,7 @@ class EmailButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         foregroundColor: Colors.white,
         backgroundColor: Colors.grey, // Szary kolor dla przycisku Email
-        minimumSize: const Size(270, 40),
+        minimumSize: const Size(380, 50),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
@@ -168,7 +168,7 @@ class GoogleButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         foregroundColor: Colors.white,
         backgroundColor: const Color(0xFFDB4437),
-        minimumSize: const Size(270, 40),
+        minimumSize: const Size(380, 50),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
@@ -194,7 +194,7 @@ class FacebookButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         foregroundColor: Colors.white,
         backgroundColor: const Color(0xFF3B5998), // Kolor tekstu
-        minimumSize: const Size(270, 40), // Minimalny rozmiar przycisku
+        minimumSize: const Size(380, 50), // Minimalny rozmiar przycisku
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10), // Zaokrąglone rogi
         ),
