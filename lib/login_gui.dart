@@ -1,6 +1,7 @@
 import 'dependencies/flashy_tab_bar2.dart';
 import 'package:flutter/material.dart';
 import 'graph/graph_conf.dart';
+import 'package:flutter/foundation.dart';
 
 class LoginGUIScreen extends StatefulWidget {
   const LoginGUIScreen({super.key});
@@ -19,42 +20,78 @@ class _LoginGUIScreenState extends State<LoginGUIScreen> {
     const CommunityPage(),
   ];
 
-  @override
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Dashboard'),
         backgroundColor: const Color(0xFF4C8743),
+        bottom: kIsWeb
+            ? PreferredSize(
+                preferredSize: const Size.fromHeight(60.0),
+                child: FlashyTabBar(
+                  selectedIndex: _selectedIndex,
+                  showElevation: false,
+                  onItemSelected: (index) => setState(() {
+                    _selectedIndex = index;
+                  }),
+                  items: [
+                    FlashyTabBarItem(
+                      icon: const Icon(Icons.home),
+                      title: const Text('Home'),
+                    ),
+                    FlashyTabBarItem(
+                      icon: const Icon(Icons.eco),
+                      title: const Text('Akcje'),
+                    ),
+                    FlashyTabBarItem(
+                      icon: const Icon(Icons.cloud),
+                      title: const Text('Emisja'),
+                    ),
+                    FlashyTabBarItem(
+                      icon: const Icon(Icons.group),
+                      title: const Text('Społeczność'),
+                    ),
+                  ],
+                ),
+              )
+            : null,
       ),
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: _widgetOptions,
+      body: Stack(
+        children: _widgetOptions.asMap().entries.map((entry) {
+          return Offstage(
+            offstage: _selectedIndex != entry.key,
+            child: entry.value,
+          );
+        }).toList(),
       ),
-      bottomNavigationBar: FlashyTabBar(
-        selectedIndex: _selectedIndex,
-        showElevation: true,
-        onItemSelected: (index) => setState(() {
-          _selectedIndex = index;
-        }),
-        items: [
-          FlashyTabBarItem(
-            icon: const Icon(Icons.home),
-            title: const Text('Home'),
-          ),
-          FlashyTabBarItem(
-            icon: const Icon(Icons.eco),
-            title: const Text('Akcje'),
-          ),
-          FlashyTabBarItem(
-            icon: const Icon(Icons.cloud),
-            title: const Text('Emisja'),
-          ),
-          FlashyTabBarItem(
-            icon: const Icon(Icons.group),
-            title: const Text('Społeczność'),
-          ),
-        ],
-      ),
+      bottomNavigationBar: kIsWeb
+          ? null
+          : FlashyTabBar(
+              selectedIndex: _selectedIndex,
+              showElevation: false,
+              onItemSelected: (index) => setState(() {
+                _selectedIndex = index;
+              }),
+              items: [
+                FlashyTabBarItem(
+                  icon: const Icon(Icons.home),
+                  title: const Text('Home'),
+                ),
+                FlashyTabBarItem(
+                  icon: const Icon(Icons.eco),
+                  title: const Text('Akcje'),
+                ),
+                FlashyTabBarItem(
+                  icon: const Icon(Icons.cloud),
+                  title: const Text('Emisja'),
+                ),
+                FlashyTabBarItem(
+                  icon: const Icon(Icons.group),
+                  title: const Text('Społeczność'),
+                ),
+              ],
+            ),
     );
   }
 }

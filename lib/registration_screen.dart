@@ -57,7 +57,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       startTimer();
     });
 
-    // Tu dodaj logikę wysyłania e-maila z kodem
+    // logika wysylania kodu na e-mail
     print("Wysłany kod weryfikacyjny: $_generatedCode");
   }
 

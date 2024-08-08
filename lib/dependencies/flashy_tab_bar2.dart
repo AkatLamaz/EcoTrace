@@ -156,7 +156,7 @@ class _FlashTabBarItem extends StatelessWidget {
             AnimatedPositioned(
               curve: animationCurve,
               duration: animationDuration,
-              top: isSelected ? -2.0 * iconSize : tabBarHeight / 4,
+              top: isSelected ? -2.0 * iconSize : tabBarHeight * 4, // zmiana z / na *
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
