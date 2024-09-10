@@ -8,11 +8,3 @@ class UserPage extends StatelessWidget {
     return const Center(child: Text("Społeczność i interakcje."));
   }
 }
-
-double parseDouble(dynamic value) {
-  try {
-    return double.parse(value.toString());
-  } catch (e) {
-    return 0.0; // Zwróć domyślną wartość w przypadku błędu
-  }
-}

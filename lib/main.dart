@@ -3,6 +3,7 @@ import 'login_with.dart';
 import 'login_email.dart'; 
 import 'login_gui.dart';
 import 'registration_screen.dart'; 
+import 'pages/notfound_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Twoja Aplikacja',
+      title: 'EcoTrace',
       initialRoute: '/',
       routes: {
         '/': (context) => const LoginScreen(),
@@ -27,19 +28,4 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class NotFoundPage extends StatelessWidget {
-  const NotFoundPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('404 Not Found'),
-      ),
-      body: const Center(
-        child: Text('Strona nie znaleziona'),
-      ),
-    );
-  }
-}
 
